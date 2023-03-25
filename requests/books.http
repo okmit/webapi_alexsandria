@@ -1,0 +1,8 @@
+###
+GET http://127.0.0.1:3000/api/books
+
+###
+GET http://127.0.0.1:3000/api/books?page=1&per=2
+
+###
+GET http://127.0.0.1:3000/api/books/1

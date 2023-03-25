@@ -1,5 +1,5 @@
 class BasePresenter
-
+  include Rails.application.routes.url_helpers
   # @relations = []
   # @sort_attributes = []
   # @filter_attributes = []
