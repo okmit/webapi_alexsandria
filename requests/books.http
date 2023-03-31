@@ -12,4 +12,17 @@ GET http://127.0.0.1:3000/api/search/ruby
 
 ###
 GET http://127.0.0.1:3000/api/books
-Authorization: Alexandria-Token api_key=1:96d6d5cc5a1be3d99f6ca38ebc6be258
+Authorization: Alexandria-Token api_key=1:my_api_key
+
+###
+POST http://localhost:3000/api/users
+Authorization: Alexandria-Token api_key=1:my_api_key
+Content-Type: application/json
+
+{
+  "data": {
+    "email":"john@gmail.com",
+    "password": "password",
+    "confirmation_redirect_url":"http://google.com"
+  }
+}

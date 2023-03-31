@@ -15,17 +15,22 @@ module Authentication
   end
 
   def validate_auth_scheme
-    unless authorization_request.match(/^#{AUTH_SCHEME} /)
+    #unless authorization_request.match(/^#{AUTH_SCHEME} /)
+    unless authorization_request.starts_with?(AUTH_SCHEME)
       unauthorized!('Client Realm')
     end
   end
 
   def unauthorized!(realm)
+    # s = %(foo "bar" baz)
+    # => "foo \"bar\" baz"
     headers['WWW-Authenticate'] = %(#{AUTH_SCHEME} realm="#{realm}")
     render(status: 401)
   end
 
   def authorization_request
+    #Rails.logger.info request.authorization.class
+    #Rails.logger.info request.inspect
     @authorization_request ||= request.authorization.to_s
   end
 
