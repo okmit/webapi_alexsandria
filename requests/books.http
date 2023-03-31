@@ -9,3 +9,7 @@ GET http://127.0.0.1:3000/api/books/1
 
 ###
 GET http://127.0.0.1:3000/api/search/ruby
+
+###
+GET http://127.0.0.1:3000/api/books
+Authorization: Alexandria-Token api_key=1:96d6d5cc5a1be3d99f6ca38ebc6be258
