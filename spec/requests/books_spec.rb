@@ -1,15 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Books', type: :request do
-
-  before do |example|
-    unless example.metadata[:skip_before]
-      allow_any_instance_of(BooksController).to(
-        receive(:validate_auth_scheme).and_return(true))
-      allow_any_instance_of(BooksController).to(
-        receive(:authenticate_client).and_return(true))
-    end  
-  end
+  include_context 'Skip Auth'
 
   let(:api_key) { ApiKey.create }
   let(:headers) do
