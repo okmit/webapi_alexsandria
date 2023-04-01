@@ -26,3 +26,21 @@ Content-Type: application/json
     "confirmation_redirect_url":"http://google.com"
   }
 }
+
+###
+GET http://localhost:3000/api/books?sort=id&dir=asc
+Accept-Encoding: gzip
+Authorization: Alexandria-Token api_key=1:my_api_key
+
+###
+GET http://localhost:3000/api/books?sort=id&dir=asc
+Authorization: Alexandria-Token api_key=1:my_api_key
+
+###
+GET http://localhost:3000/api/books?sort=id&dir=asc
+Authorization: Alexandria-Token api_key=1:my_api_key
+If-None-Match: W/"0361c209ef76da42d7002ed07816242c"
+
+### check cache
+GET http://localhost:3000/api/books?sort=id&dir=asc
+Authorization: Alexandria-Token api_key=1:my_api_key
