@@ -1,0 +1,185 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/tokens
+    body:
+      encoding: UTF-8
+      string: card[number]=4000000000000002&card[exp_month]=6&card[exp_year]=2028&card[cvc]=314
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/7.1.0
+      Authorization:
+      - Bearer sk_test_SNEyLqhFTQcAIjpFfrcyBwyJ
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_p99Z1WuuzzUn4l","request_duration_ms":1123}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"7.1.0","lang":"ruby","lang_version":"3.0.3 p157 (2021-11-24)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 5.15.0-69-generic (buildd@lcy02-amd64-071) (gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1)
+        9.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #76~20.04.1-Ubuntu SMP Mon Mar
+        20 15:54:19 UTC 2023","hostname":"olegk"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 01 Apr 2023 08:28:45 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '813'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - ad042b1f-3c71-4214-9cd4-95c1542088fc
+      Original-Request:
+      - req_oEnLsTQaU1WYEK
+      Request-Id:
+      - req_oEnLsTQaU1WYEK
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2013-08-13'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "tok_1Mrznl2pcJj2o7U2a0eQCaYV",
+          "object": "token",
+          "card": {
+            "id": "card_1Mrznl2pcJj2o7U2VrUN9H3m",
+            "object": "card",
+            "address_city": null,
+            "address_country": null,
+            "address_line1": null,
+            "address_line1_check": null,
+            "address_line2": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_zip_check": null,
+            "brand": "Visa",
+            "country": "US",
+            "customer": null,
+            "cvc_check": null,
+            "dynamic_last4": null,
+            "exp_month": 6,
+            "exp_year": 2028,
+            "fingerprint": "1iA5wZiQGiRbTsam",
+            "funding": "credit",
+            "last4": "0002",
+            "metadata": {},
+            "name": null,
+            "tokenization_method": null,
+            "type": "Visa"
+          },
+          "client_ip": "45.12.25.231",
+          "created": 1680337725,
+          "livemode": false,
+          "type": "card",
+          "used": false
+        }
+  recorded_at: Sat, 01 Apr 2023 08:28:46 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/charges
+    body:
+      encoding: UTF-8
+      string: amount=299&currency=USD&source=tok_1Mrznl2pcJj2o7U2a0eQCaYV&metadata[purchase_id]=2&description=Charge+for+Ruby+Under+a+Microscope+%28Purchase+ID+2%29
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/7.1.0
+      Authorization:
+      - Bearer sk_test_SNEyLqhFTQcAIjpFfrcyBwyJ
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_oEnLsTQaU1WYEK","request_duration_ms":557}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"7.1.0","lang":"ruby","lang_version":"3.0.3 p157 (2021-11-24)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 5.15.0-69-generic (buildd@lcy02-amd64-071) (gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1)
+        9.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #76~20.04.1-Ubuntu SMP Mon Mar
+        20 15:54:19 UTC 2023","hostname":"olegk"}'
+      Idempotency-Key:
+      - 2023-04-01 11:28:45 +0300/2/2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 01 Apr 2023 08:28:46 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '366'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - 2023-04-01 11:28:45 +0300/2/2
+      Original-Request:
+      - req_21oxafSABAvRUh
+      Request-Id:
+      - req_21oxafSABAvRUh
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2013-08-13'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "error": {
+            "charge": "ch_3Mrznm2pcJj2o7U20ycXTWkt",
+            "code": "card_declined",
+            "decline_code": "generic_decline",
+            "doc_url": "https://stripe.com/docs/error-codes/card-declined",
+            "message": "Your card was declined.",
+            "request_log_url": "https://dashboard.stripe.com/test/logs/req_21oxafSABAvRUh?t=1680337726",
+            "type": "card_error"
+          }
+        }
+  recorded_at: Sat, 01 Apr 2023 08:28:46 GMT
+recorded_with: VCR 6.1.0

@@ -15,6 +15,9 @@ require "action_cable/engine"
 # require "sprockets/railtie"
 require "rails/test_unit/railtie"
 
+env_variables = File.join('config', 'env.rb')
+load(env_variables) if File.exists?(env_variables)
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

@@ -1,0 +1,318 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/tokens
+    body:
+      encoding: UTF-8
+      string: card[number]=4242424242424242&card[exp_month]=6&card[exp_year]=2028&card[cvc]=314
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/7.1.0
+      Authorization:
+      - Bearer sk_test_SNEyLqhFTQcAIjpFfrcyBwyJ
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"7.1.0","lang":"ruby","lang_version":"3.0.3 p157 (2021-11-24)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 5.15.0-69-generic (buildd@lcy02-amd64-071) (gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1)
+        9.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #76~20.04.1-Ubuntu SMP Mon Mar
+        20 15:54:19 UTC 2023","hostname":"olegk"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 01 Apr 2023 08:52:02 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '813'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - bbb1dfcb-28a6-438c-a1c3-55c97ce0d2aa
+      Original-Request:
+      - req_18KRJGtK7wGzvB
+      Request-Id:
+      - req_18KRJGtK7wGzvB
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2013-08-13'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "tok_1Ms0AH2pcJj2o7U2bOLaLK4C",
+          "object": "token",
+          "card": {
+            "id": "card_1Ms0AH2pcJj2o7U2iUuZODgo",
+            "object": "card",
+            "address_city": null,
+            "address_country": null,
+            "address_line1": null,
+            "address_line1_check": null,
+            "address_line2": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_zip_check": null,
+            "brand": "Visa",
+            "country": "US",
+            "customer": null,
+            "cvc_check": null,
+            "dynamic_last4": null,
+            "exp_month": 6,
+            "exp_year": 2028,
+            "fingerprint": "rqrjlMXTlb2cjRj9",
+            "funding": "credit",
+            "last4": "4242",
+            "metadata": {},
+            "name": null,
+            "tokenization_method": null,
+            "type": "Visa"
+          },
+          "client_ip": "45.12.25.231",
+          "created": 1680339121,
+          "livemode": false,
+          "type": "card",
+          "used": false
+        }
+  recorded_at: Sat, 01 Apr 2023 08:52:02 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/charges
+    body:
+      encoding: UTF-8
+      string: amount=299&currency=USD&source=tok_1Ms0AH2pcJj2o7U2bOLaLK4C&metadata[purchase_id]=5&description=Charge+for+Ruby+on+Rails+Tutorial+%28Purchase+ID+5%29
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/7.1.0
+      Authorization:
+      - Bearer sk_test_SNEyLqhFTQcAIjpFfrcyBwyJ
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_18KRJGtK7wGzvB","request_duration_ms":640}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"7.1.0","lang":"ruby","lang_version":"3.0.3 p157 (2021-11-24)","platform":"x86_64-linux","engine":"ruby","publisher":"stripe","uname":"Linux
+        version 5.15.0-69-generic (buildd@lcy02-amd64-071) (gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1)
+        9.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #76~20.04.1-Ubuntu SMP Mon Mar
+        20 15:54:19 UTC 2023","hostname":"olegk"}'
+      Idempotency-Key:
+      - 2023-04-01 11:52:02 +0300/10/5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 01 Apr 2023 08:52:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3685'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - 2023-04-01 11:52:02 +0300/10/5
+      Original-Request:
+      - req_gVDKhSyvcPWPQD
+      Request-Id:
+      - req_gVDKhSyvcPWPQD
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2013-08-13'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "ch_3Ms0AI2pcJj2o7U20senzdc9",
+          "object": "charge",
+          "amount": 299,
+          "amount_captured": 299,
+          "amount_refunded": 0,
+          "application": null,
+          "application_fee": null,
+          "application_fee_amount": null,
+          "balance_transaction": "txn_3Ms0AI2pcJj2o7U20tBYwU3G",
+          "billing_details": {
+            "address": {
+              "city": null,
+              "country": null,
+              "line1": null,
+              "line2": null,
+              "postal_code": null,
+              "state": null
+            },
+            "email": null,
+            "name": null,
+            "phone": null
+          },
+          "calculated_statement_descriptor": "ARTISTECARD.COM",
+          "captured": true,
+          "card": {
+            "id": "card_1Ms0AH2pcJj2o7U2iUuZODgo",
+            "object": "card",
+            "address_city": null,
+            "address_country": null,
+            "address_line1": null,
+            "address_line1_check": null,
+            "address_line2": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_zip_check": null,
+            "brand": "Visa",
+            "country": "US",
+            "customer": null,
+            "cvc_check": "pass",
+            "dynamic_last4": null,
+            "exp_month": 6,
+            "exp_year": 2028,
+            "fingerprint": "rqrjlMXTlb2cjRj9",
+            "funding": "credit",
+            "last4": "4242",
+            "metadata": {},
+            "name": null,
+            "tokenization_method": null,
+            "type": "Visa"
+          },
+          "created": 1680339122,
+          "currency": "usd",
+          "customer": null,
+          "description": "Charge for Ruby on Rails Tutorial (Purchase ID 5)",
+          "destination": null,
+          "dispute": null,
+          "disputed": false,
+          "failure_balance_transaction": null,
+          "failure_code": null,
+          "failure_message": null,
+          "fraud_details": {},
+          "invoice": null,
+          "livemode": false,
+          "metadata": {
+            "purchase_id": "5"
+          },
+          "on_behalf_of": null,
+          "order": null,
+          "outcome": {
+            "network_status": "approved_by_network",
+            "reason": null,
+            "risk_level": "normal",
+            "risk_score": 29,
+            "seller_message": "Payment complete.",
+            "type": "authorized"
+          },
+          "paid": true,
+          "payment_intent": null,
+          "payment_method": "card_1Ms0AH2pcJj2o7U2iUuZODgo",
+          "payment_method_details": {
+            "card": {
+              "brand": "visa",
+              "checks": {
+                "address_line1_check": null,
+                "address_postal_code_check": null,
+                "cvc_check": "pass"
+              },
+              "country": "US",
+              "exp_month": 6,
+              "exp_year": 2028,
+              "fingerprint": "rqrjlMXTlb2cjRj9",
+              "funding": "credit",
+              "installments": null,
+              "last4": "4242",
+              "mandate": null,
+              "network": "visa",
+              "network_token": {
+                "used": false
+              },
+              "three_d_secure": null,
+              "wallet": null
+            },
+            "type": "card"
+          },
+          "receipt_email": null,
+          "receipt_number": null,
+          "receipt_url": "https://pay.stripe.com/receipts/payment/CAcaFwoVYWNjdF8xMDJsNGkycGNKajJvN1UyKLPhn6EGMgZ86FTLqXM6LBYSo1AMZ9LjnC4L8GUVUsNXcom8gX84czBYiF9256ZG3vs0K9pF3mHNlXf1",
+          "refunded": false,
+          "refunds": [],
+          "review": null,
+          "shipping": null,
+          "source": {
+            "id": "card_1Ms0AH2pcJj2o7U2iUuZODgo",
+            "object": "card",
+            "address_city": null,
+            "address_country": null,
+            "address_line1": null,
+            "address_line1_check": null,
+            "address_line2": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_zip_check": null,
+            "brand": "Visa",
+            "country": "US",
+            "customer": null,
+            "cvc_check": "pass",
+            "dynamic_last4": null,
+            "exp_month": 6,
+            "exp_year": 2028,
+            "fingerprint": "rqrjlMXTlb2cjRj9",
+            "funding": "credit",
+            "last4": "4242",
+            "metadata": {},
+            "name": null,
+            "tokenization_method": null,
+            "type": "Visa"
+          },
+          "source_transfer": null,
+          "statement_description": null,
+          "statement_descriptor": null,
+          "statement_descriptor_suffix": null,
+          "status": "paid",
+          "transfer_data": null,
+          "transfer_group": null
+        }
+  recorded_at: Sat, 01 Apr 2023 08:52:03 GMT
+recorded_with: VCR 6.1.0
